@@ -1,7 +1,8 @@
-#include "../includes/bubble_sort.hpp"
-#include "../includes/insertion_sort.hpp"
-#include "../includes/selection_sort.hpp"
+#include "../includes/bubblesort.hpp"
+#include "../includes/insertionsort.hpp"
+#include "../includes/selectionsort.hpp"
 #include "../includes/utils.hpp"
+#include "../includes/mergesort.hpp"
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
@@ -17,7 +18,6 @@ int main(int argc, char **argv) {
 
   int sort = atoi(argv[1]);
   int size = atoi(argv[2]);
-  int vector[size];
 
   switch (sort) {
   case 0:
@@ -29,9 +29,14 @@ int main(int argc, char **argv) {
   case 2:
     std::cout << "----- BUBBLE SORT -----";
     break;
+  case 3:
+    std::cout << "----- MERGE -----";
+    break;
   default:
     std::cout << "You send an invalid sort type. 0 selection; 1 insertion";
   }
+
+  int vector[size];
 
   fill(vector, size);
 
@@ -40,23 +45,27 @@ int main(int argc, char **argv) {
 
   switch (sort) {
   case 0:
-    selection_sort(vector, size);
+    selectionsort(vector, size);
     break;
   case 1:
-    insertion_sort(vector, size);
+    insertionsort(vector, size);
     break;
   case 2:
-    bubble_sort(vector, size);
+    bubblesort(vector, size);
+    break;
+  case 3:
+    mergesort(vector, size);
     break;
   default:
     std::cout << "You send an invalid sort type. Select of of below options:\n";
     std::cout << "SELECTION SORT  : 0\n";
-    std::cout << "INSERSTION SORT : 1\n";
+    std::cout << "INSERTION SORT  : 1\n";
     std::cout << "BUBBLE SORT     : 2\n";
+    std::cout << "MERGE SORT      : 3\n";
 
     return 1;
   }
-  std::cout << "\nOrdered vector  : ";
+  std::cout << "\n  Ordered vector: ";
   print(vector, size);
   std::cout << "\n";
 

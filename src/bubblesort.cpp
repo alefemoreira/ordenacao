@@ -1,7 +1,7 @@
-#include "../includes/bubble_sort.hpp"
+#include "../includes/bubblesort.hpp"
 #include "../includes/utils.hpp"
 
-void bubble_sort(int *vector, int size) {
+void bubblesort(int *vector, int size) {
   for (int i = size - 1; i > 1; i--) {
     int swaps = 0;
     for (int j = 0; j < i; j++) {

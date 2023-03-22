@@ -1,7 +1,7 @@
-#include "../includes/selection_sort.hpp"
+#include "../includes/selectionsort.hpp"
 #include "../includes/utils.hpp"
 
-void selection_sort(int *vector, int size) {
+void selectionsort(int *vector, int size) {
   for (int i = 0; i < size; i++) {
     int selected = select(vector, size, i);
     if (selected != 0)
