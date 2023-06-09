@@ -5,9 +5,16 @@
 #include <cstdlib>
 
 void print(int *vector, int size) {
-  printf("%.2d", vector[0]);
+  printf("%.3d", vector[0]);
   for (int i = 1; i < size; i++) {
-    printf(", %.2d", vector[i]);
+    printf(", %.3d", vector[i]);
+  }
+}
+
+void print(std::vector<int> *vector) {
+  printf("%.3d", *vector->begin());
+  for (auto it = vector->begin() + 1; it < vector->end(); it++) {
+    printf(", %.3d", *it);
   }
 }
 
@@ -19,6 +26,6 @@ void swap(int *x, int *y) {
 
 void fill(int *vector, int size) {
   for (int i = 0; i < size; i++) {
-    vector[i] = rand() % 99 + 1;
+    vector[i] = rand() % 999 + 1;
   }
 }

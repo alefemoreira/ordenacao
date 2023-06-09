@@ -24,7 +24,6 @@ void merge(int *v, int startA, int middle, int endB) {
   int i = 0;
   int j = 0;
   for (int k = startA; k < endB + 1; k++) {
-    printf("\ni: %d, j: %d - start: %d, mid: %d, end: %d", i, j, startA, middle, endB);
     if (v1[i] <= v2[j]) {
       v[k] = v1[i];
       i++;
